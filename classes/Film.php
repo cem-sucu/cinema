@@ -6,12 +6,14 @@ class Film{
     private int $duree;
     private string $resume;
     private DateTime $dateSortie;
+    private Genre $genre;
 
-    public function __construct(string $titre, int $duree, string $resume, string $dateSortie) {
+    public function __construct(string $titre, int $duree, string $resume, string $dateSortie, Genre $genre) {
         $this->titre = $titre;
         $this->duree = $duree;
         $this->resume = $resume;
         $this->dateSortie = new DateTime($dateSortie);
+        $this->genre = $genre;
     }
     
 
@@ -63,11 +65,24 @@ class Film{
 
         return $this;
     }
+//getter et setter pour Genre 
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+    public function setGenre($genre)
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
 
     public function __toString()
     {
-        return " Le film : ".$this->getTitre() ." d'une duréé de " .$this->getDuree() ." minutes, sorti le " .$this->getDateSortie()->format("d-m-Y") .".<br>" . " Son resumé : " .$this->getResume();
+        return "<strong> Le film </strong>: ".$this->getTitre() ." d'une duréé de " .$this->getDuree() ." minutes, sorti le " .$this->getDateSortie()->format("d-m-Y") .".<br>" . " Son resumé : " .$this->getResume();
     }
+
 
 }
 

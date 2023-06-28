@@ -30,6 +30,18 @@ class Genre{
         return "Genre : " . $this->getGenre() . ", Réalisateur : " . $this->getRealisateur();
     }
 
+    // methode pour film par genre
+    public function getFilmByGenre (array $film):array{
+        $filtreFilms = [];
+
+        foreach ($film as $film){
+            if($film instanceof Film && $film->getGenre()  === $this){
+                $filtreFilms[] = $film;
+            }
+        }
+        return $filtreFilms;
+    }
+
 }
 
 

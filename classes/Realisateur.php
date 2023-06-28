@@ -51,6 +51,19 @@ class Realisateur{
    {
     return "Le réalisateur : " .$this->getNom() ." " .$this->getPrenom() . " (".$this->getSexe().")" ." né le " .$this->getDateNaissance()->format("d-m-Y");
    }
+
+   public function getFilmsByRealisateur(array $films): array
+   {
+       $filmsByRealisateur = [];
+       
+       foreach ($films as $film) {
+           if ($film->getGenre()->getRealisateur() === $this) {
+               $filmsByRealisateur[] = $film;
+           }
+       }
+       
+       return $filmsByRealisateur;
+   }
   
 }
 
