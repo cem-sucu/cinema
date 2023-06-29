@@ -3,7 +3,7 @@
 class Genre{
     private string $genre;
     private Realisateur $realisateur;
-    protected array $films;
+    private array $films;
 
     public function __construct(string $genre, Realisateur $realisateur){
         $this->genre=$genre;
@@ -32,16 +32,18 @@ class Genre{
         return "Genre : " . $this->getGenre() . ", Réalisateur : " . $this->getRealisateur();
     }
 
-    public function addFilm(Film $film){
-        $this->films[] =$film;
+    public function addFilm(Film $film) {
+        $this->films[] = $film;
     }
+    
 
     // Méthode pour afficher les films par genre
     public function afficherFilms() {
-        echo "<h3>Films du genre " . $this->genre . "</h3>";
+        $result = "<h3>Films du genre " . $this->genre . "</h3>";
         foreach ($this->films as $film) {
-            echo $film . "<br>";
+             $result .= $film . "<br>";
         }
+        return $result;
     }
 
 }

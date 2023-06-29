@@ -15,41 +15,31 @@ spl_autoload_register(function ($class_name){
 $realisateur1 = new Realisateur("Reeves", "Matt", "H", "1966-04-27" );
 $realisateur2 = new Realisateur("J. J. ", " Abraham ", " H ", "1938-04-08");
 echo $realisateur1 ."<br>";
+echo $realisateur2 ."<br>";
 
 // genre
 $genre1 = new Genre("Action", $realisateur2);
 $genre2 = new Genre("Fantastique",$realisateur1);
-echo $genre1 ."<br><br>";
+echo $genre1 ."<br>";
+echo $genre2 ."<br><br>";
 
 // film
 $film1 = new Film("Star Wars Episode IV", 121, "La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle.", "1977-03-03", $genre1, $realisateur1);
-$film2 = new Film("Batman", 134, "Un super héros habillé en chauve-souris qui protège Gotham.", "1954-05-04", $genre2, $realisateur1);
-$film3 = new Film("Spiderman 1", 221, "Super-héros homme-araignée qui attrape les méchants.", "1974-05-04", $genre2, $realisateur1);
+$film2 = new Film("Batman", 134, "Un super héros habillé en chauve-souris qui protège Gotham.", "1954-05-04", $genre2, $realisateur2);
+$film3 = new Film("Spiderman 1", 221, "Super-héros homme-araignée qui attrape les méchants.", "1974-05-04", $genre2, $realisateur2);
 
 //affiche les films
 echo $film1."<br><br>";
 echo $film2."<br><br>";
 echo $film3."<br><br>";
 
+// Afficher les films par genre
+echo $genre1->afficherFilms();
+echo $genre2->afficherFilms();
 
-
-// Ajout des films aux genres correspondants
-$genre1->addFilm($film1);
-$genre2->addFilm($film2);
-$genre2->addFilm($film3);
-
-// Affichage films
-$genre1->afficherFilms();
-
-// Ajout des films aux réalisateurs correspondants
-$realisateur1->addFilm($film2);
-$realisateur1->addFilm($film3);
-$realisateur2->addFilm($film1);
-
-// Afficghe film
-$realisateur1->afficherFilms();
-
-
+// Afficher les films d'un réalisateur
+echo $realisateur1->afficherFilms();
+echo $realisateur2->afficherFilms();
 
 
 ?>
