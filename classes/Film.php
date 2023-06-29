@@ -17,8 +17,9 @@ class Film{
         $this->dateSortie = new DateTime($dateSortie);
         $this->genre = $genre;
         $this->realisateur = $realisateur;
-        //ajout film et genre pour
+        // Ajouter le film à la liste des films du genre
         $this->genre->addFilm($this);
+        //jouter le film à la liste des films du réalisateur
         $this->realisateur->addFilm($this);
     }
     
