@@ -47,6 +47,7 @@ class Realisateur{
     $this->dateNaissance = $dateNaissance;
    }
 
+// methode tout string
     public function __toString()
     {
         return "Le réalisateur : " .$this->getNom() ." " .$this->getPrenom() . " (".$this->getSexe().")" ." né le " .$this->getDateNaissance()->format("d-m-Y");

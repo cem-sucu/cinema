@@ -32,7 +32,7 @@ class Film{
 
         return $this;
     }
-    
+
 // getter et setter duree
     public function getDuree():int
     {
@@ -95,7 +95,7 @@ class Film{
 
         return $this;
     }
-
+// methode tostring
     public function __toString()
     {
         return "<strong> Le film </strong>: ".$this->getTitre() ." d'une duréé de " .$this->getDuree() ." minutes, sorti le " .$this->getDateSortie()->format("d-m-Y") .".<br>" . " Son resumé : " .$this->getResume();
