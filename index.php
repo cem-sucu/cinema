@@ -22,23 +22,32 @@ $genre2 = new Genre("Fantastique",$realisateur1);
 echo $genre1 ."<br><br>";
 
 // film
-$film1 = new Film(" Star  Wars  Episode  IV ", 121, " La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle. Capturée par les troupes de choc de l'Empereur menées par le sombre et impitoyable Dark Vador, la princesse Leia Organa dissimule les plans de l'Etoile Noire. ", "1977-03-03 ", $genre1, $realisateur1);
+$film1 = new Film("Star Wars Episode IV", 121, "La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle.", "1977-03-03", $genre1, $realisateur1);
+$film2 = new Film("Batman", 134, "Un super héros habillé en chauve-souris qui protège Gotham.", "1954-05-04", $genre2, $realisateur1);
+$film3 = new Film("Spiderman 1", 221, "Super-héros homme-araignée qui attrape les méchants.", "1974-05-04", $genre2, $realisateur1);
 
-$film2 = new Film("Batman", 134, "Un super héro habillé en chauve souris qui, protège Gotham", "1954-05-04", $genre1,$realisateur2);
-
-$film3 = new Film("Spiderman 1", 221, "super-héros homme araigné qui attrape les méchants", "1974-05-04", $genre2,$realisateur2);
+//affiche les films
 echo $film1."<br><br>";
 echo $film2."<br><br>";
 echo $film3."<br><br>";
 
 
 
-//creation objet pour afficher les film, realisateur et genre
-$films =[$film1,$film2,$film3];
+// Ajout des films aux genres correspondants
+$genre1->addFilm($film1);
+$genre2->addFilm($film2);
+$genre2->addFilm($film3);
 
-// Appel des méthodes d'affichage des films par genre et par réalisateur
-$genre1->afficherFilmsParGenre($films);
-$realisateur1->afficherFilmsParRealisateur($films);
+// Affichage films
+$genre1->afficherFilms();
+
+// Ajout des films aux réalisateurs correspondants
+$realisateur1->addFilm($film2);
+$realisateur1->addFilm($film3);
+$realisateur2->addFilm($film1);
+
+// Afficghe film
+$realisateur1->afficherFilms();
 
 
 

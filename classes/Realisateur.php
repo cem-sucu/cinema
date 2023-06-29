@@ -6,6 +6,7 @@ class Realisateur{
     private string $prenom;
     private string $sexe;
     private DateTime $dateNaissance;
+    protected array $films;
 
 
     public function __construct(string $nom, string $prenom, string $sexe, string $dateNaissance)
@@ -14,6 +15,7 @@ class Realisateur{
         $this-> prenom = $prenom;
         $this-> sexe = $sexe;
         $this-> dateNaissance = new DateTime($dateNaissance);
+        $this->films = [];
     }
 
 // getter et setter pour nom
@@ -54,12 +56,14 @@ class Realisateur{
     }
 
       // Méthode pour afficher les films par réalisateur
-      public function afficherFilmsParRealisateur(array $films) {
-        echo "<h3>Films du réalisateur " . $this . "</h3>";
-        foreach ($films as $film) {
-            if ($film->getRealisateur() === $this) {
-                echo $film . "<br>";
-            }
+      public function addFilm(Film $film) {
+        $this->films[] = $film;
+    }
+
+    public function afficherFilms() {
+        echo "<h3>Films du réalisateur " . $this->prenom . " " . $this->nom . "</h3>";
+        foreach ($this->films as $film) {
+            echo $film . "<br>";
         }
     }
 
