@@ -49,13 +49,20 @@ $acteur1 = new Acteur("Johnny Depp");
 $acteur2 = new Acteur("Leonardo DiCaprio");
 $acteur3 = new Acteur("Portamn Nathalie");
 
+// role 
+$role1 = new Role("Cobb");
+$role2 = new Role("Teddy");
+$role3 = new Role("Jack Dawson");
+$role4 = new Role("Padmé Amidala");
+
 
 // Création objet Jouer
-$jouer1 = new Jouer($acteur1, $film1, "Cobb");
-$jouer2 = new Jouer($acteur1, $film2, "Teddy Daniels");
-$jouer3 = new Jouer($acteur2, $film2, "Edward \"Teddy\" Daniels");
-$jouer4 = new Jouer($acteur2, $film3, "Jack Dawson");
-$jouer5 = new Jouer($acteur3, $film1, "Padmé Amidala");
+$jouer1 = new Jouer($acteur1, $film1, $role1);
+$jouer2 = new Jouer($acteur1, $film2, $role2);
+$jouer3 = new Jouer($acteur2, $film2, $role2);
+$jouer6 = new Jouer($acteur2, $film2, $role2);
+$jouer4 = new Jouer($acteur2, $film3, $role3);
+$jouer5 = new Jouer($acteur3, $film1, $role4);
 
 // Affichage de la filmographie des acteurs
 echo $acteur1->getFilmographie();
@@ -65,5 +72,13 @@ echo $acteur3->getFilmographie();
 // Affichage de la filmographie des réalisateurs
 echo $realisateur1->getFilmographie();
 echo $realisateur2->getFilmographie();
+
+//affichage des roles
+echo $jouer1->afficherRole();
+echo $jouer2->afficherRole();
+echo $jouer3->afficherRole();
+echo $jouer4->afficherRole();
+echo $jouer5->afficherRole();
+echo $jouer6->afficherRole();
 
 ?>
