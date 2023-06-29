@@ -42,4 +42,28 @@ echo $realisateur1->afficherFilms();
 echo $realisateur2->afficherFilms();
 
 
+
+
+// actyeur
+$acteur1 = new Acteur("Johnny Depp");
+$acteur2 = new Acteur("Leonardo DiCaprio");
+$acteur3 = new Acteur("Portamn Nathalie");
+
+
+// Création objet Jouer
+$jouer1 = new Jouer($acteur1, $film1, "Cobb");
+$jouer2 = new Jouer($acteur1, $film2, "Teddy Daniels");
+$jouer3 = new Jouer($acteur2, $film2, "Edward \"Teddy\" Daniels");
+$jouer4 = new Jouer($acteur2, $film3, "Jack Dawson");
+$jouer5 = new Jouer($acteur3, $film1, "Padmé Amidala");
+
+// Affichage de la filmographie des acteurs
+echo $acteur1->getFilmographie();
+echo $acteur2->getFilmographie();
+echo $acteur3->getFilmographie();
+
+// Affichage de la filmographie des réalisateurs
+echo $realisateur1->getFilmographie();
+echo $realisateur2->getFilmographie();
+
 ?>

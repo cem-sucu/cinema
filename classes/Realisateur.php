@@ -7,6 +7,7 @@ class Realisateur{
     private string $sexe;
     private DateTime $dateNaissance;
     private array $films;
+    private $filmographie;
 
 
     public function __construct(string $nom, string $prenom, string $sexe, string $dateNaissance)
@@ -16,6 +17,7 @@ class Realisateur{
         $this-> sexe = $sexe;
         $this->dateNaissance = new DateTime($dateNaissance);
         $this->films = [];
+        $this->filmographie = array();
     }
 
 // getter et setter pour nom
@@ -68,6 +70,17 @@ class Realisateur{
             $result .= $film . "<br>";
         }
         return $result;
+    }
+    public function ajouterFilm($film) {
+        $this->filmographie[] = $film;
+    }
+
+    public function getFilmographie() {
+        $filmographie = "Filmographie de ".$this->nom.":\n";
+        foreach ($this->filmographie as $film) {
+            $filmographie .= $film->getTitre();
+        }
+        return $filmographie;
     }
     
 
