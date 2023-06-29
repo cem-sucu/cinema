@@ -47,23 +47,21 @@ class Realisateur{
     $this->dateNaissance = $dateNaissance;
    }
 
- public function __toString()
-   {
-    return "Le réalisateur : " .$this->getNom() ." " .$this->getPrenom() . " (".$this->getSexe().")" ." né le " .$this->getDateNaissance()->format("d-m-Y");
-   }
+    public function __toString()
+    {
+        return "Le réalisateur : " .$this->getNom() ." " .$this->getPrenom() . " (".$this->getSexe().")" ." né le " .$this->getDateNaissance()->format("d-m-Y");
+    }
 
-   public function getFilmsByRealisateur(array $films): array
-   {
-       $filmsByRealisateur = [];
-       
-       foreach ($films as $film) {
-           if ($film->getGenre()->getRealisateur() === $this) {
-               $filmsByRealisateur[] = $film;
-           }
-       }
-       
-       return $filmsByRealisateur;
-   }
+      // Méthode pour afficher les films par réalisateur
+      public function afficherFilmsParRealisateur(array $films) {
+        echo "<h3>Films du réalisateur " . $this . "</h3>";
+        foreach ($films as $film) {
+            if ($film->getRealisateur() === $this) {
+                echo $film . "<br>";
+            }
+        }
+    }
+
   
 }
 

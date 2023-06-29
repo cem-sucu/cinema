@@ -7,13 +7,16 @@ class Film{
     private string $resume;
     private DateTime $dateSortie;
     private Genre $genre;
+    private Realisateur $realisateur;
 
-    public function __construct(string $titre, int $duree, string $resume, string $dateSortie, Genre $genre) {
+
+    public function __construct(string $titre, int $duree, string $resume, string $dateSortie, Genre $genre, Realisateur $realisateur) {
         $this->titre = $titre;
         $this->duree = $duree;
         $this->resume = $resume;
         $this->dateSortie = new DateTime($dateSortie);
         $this->genre = $genre;
+        $this->realisateur = $realisateur;
     }
     
 
@@ -29,6 +32,7 @@ class Film{
 
         return $this;
     }
+    
 // getter et setter duree
     public function getDuree():int
     {
@@ -41,6 +45,7 @@ class Film{
 
         return $this;
     }
+
 //getter et setter resume
     public function getResume():string
     {
@@ -53,6 +58,7 @@ class Film{
 
         return $this;
     }
+
 // getter et setter dateSortie
     public function getDateSortie():DateTime
     {
@@ -65,6 +71,7 @@ class Film{
 
         return $this;
     }
+
 //getter et setter pour Genre 
     public function getGenre()
     {
@@ -77,11 +84,23 @@ class Film{
         return $this;
     }
 
+//getter et setter realisateur
+    public function getRealisateur():Realisateur
+    {
+        return $this->realisateur;
+    } 
+    public function setRealisateur($realisateur)
+    {
+        $this->realisateur = $realisateur;
+
+        return $this;
+    }
 
     public function __toString()
     {
         return "<strong> Le film </strong>: ".$this->getTitre() ." d'une duréé de " .$this->getDuree() ." minutes, sorti le " .$this->getDateSortie()->format("d-m-Y") .".<br>" . " Son resumé : " .$this->getResume();
     }
+
 
 
 }
