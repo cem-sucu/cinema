@@ -2,12 +2,10 @@
 
 class Genre{
     private string $genre;
-    private Realisateur $realisateur;
     private array $films;
 
-    public function __construct(string $genre, Realisateur $realisateur){
-        $this->genre=$genre;
-        $this->realisateur=$realisateur;	
+    public function __construct(string $genre){
+        $this->genre=$genre;	
         $this->films=[];
     }
     
@@ -19,17 +17,9 @@ class Genre{
     public function setGenre($genre){
         $this->genre = $genre;
     }
-// getter et setter de Realisateur
-    public function getRealisateur(): Realisateur {
-        return $this->realisateur;
-    }
-
-    public function setRealisateur(Realisateur $realisateur) {
-        $this->realisateur = $realisateur;
-    }
 
     public function __toString() {
-        return "Genre : " . $this->getGenre() . ", Réalisateur : " . $this->getRealisateur();
+        return "Genre : " . $this->getGenre();
     }
 
     public function addFilm(Film $film) {
