@@ -13,12 +13,12 @@ class Personne {
         $this->dateNaissance = new DateTime($dateNaissance);
     }
 
-    // ... Add getters and setters for common attributes
+    //methode toString
 
     public function __toString() {
         return $this->prenom . " " . $this->nom . " (" . $this->sexe . ")" . " né le " . $this->dateNaissance->format("d-m-Y");
     }
-    
+
 }
 
 ?>
