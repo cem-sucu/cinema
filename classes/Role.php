@@ -1,34 +1,44 @@
 <?php 
 
 class Role{
-    private string $role;
+    private $nom;
+    private array $castings;
 
-    public function __construct(string $role)
+    public function __construct(string $nom)
     {
-        $this->role = $role;
+        $this->nom=$nom;
     }
 
 
-    /**
-     * Get the value of role
-     */ 
-    public function getRole()
-    {
-        return $this->role;
+    // methode ajout casting
+    public function ajouterCasting(Jouer $casting) {
+        $this->castings[] = $casting;
     }
 
-    /**
-     * Set the value of role
-     *
-     * @return  self
-     */ 
-    public function setRole($role)
-    {
-        $this->role = $role;
+   
 
-        return $this;
-    }
+        /**
+         * Get the value of nom
+         */ 
+        public function getNom()
+        {
+                return $this->nom;
+        }
+        
+
+        /**
+         * Set the value of nom
+         *
+         * @return  self
+         */ 
+        public function setNom($nom)
+        {
+                $this->nom = $nom;
+
+                return $this;
+        }
 }
+
 
 
 ?>

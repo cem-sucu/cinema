@@ -45,9 +45,9 @@ echo $realisateur2->afficherFilms();
 
 
 // actyeur
-$acteur1 = new Acteur("Johnny Depp");
-$acteur2 = new Acteur("Leonardo DiCaprio");
-$acteur3 = new Acteur("Portamn Nathalie");
+$acteur1 = new Acteur("Depp", "Johnny", "H", "1960-05-01");
+$acteur2 = new Acteur("Di Caprio ", " Leonardo ", " H ", "1972-05-03");
+$acteur3 = new Acteur("Portman ", " Nathalie ", " F ", "19-05-03");
 
 // role 
 $role1 = new Role("Cobb");
@@ -70,8 +70,8 @@ echo $acteur2->getFilmographie();
 echo $acteur3->getFilmographie();
 
 // Affichage de la filmographie des réalisateurs
-echo $realisateur1->getFilmographie();
-echo $realisateur2->getFilmographie();
+echo $realisateur1->ajouterFilm($film1);
+echo $realisateur2->ajouterFilm($film2);
 
 //affichage des roles
 echo $jouer1->afficherRole();
