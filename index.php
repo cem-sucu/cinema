@@ -27,6 +27,7 @@ echo $genre2 ."<br><br>";
 $film1 = new Film("Star Wars Episode IV", 121, "La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle.", "1977-03-03", $genre1, $realisateur1);
 $film2 = new Film("Batman", 134, "Un super héros habillé en chauve-souris qui protège Gotham.", "1954-05-04", $genre2, $realisateur2);
 $film3 = new Film("Spiderman 1", 221, "Super-héros homme-araignée qui attrape les méchants.", "1974-05-04", $genre2, $realisateur2);
+$film4 = new Film("Pirate des Caraibes", 221, "Pirate qui vie des aventures", "1974-05-04", $genre2, $realisateur2);
 
 //affiche les films
 echo $film1."<br><br>";
@@ -41,9 +42,6 @@ echo $genre2->afficherFilms();
 echo $realisateur1->afficherFilms();
 echo $realisateur2->afficherFilms();
 
-
-
-
 // actyeur
 $acteur1 = new Acteur("Depp", "Johnny", "H", "1960-05-01");
 $acteur2 = new Acteur("Di Caprio ", " Leonardo ", " H ", "1972-05-03");
@@ -54,31 +52,30 @@ $role1 = new Role("Cobb");
 $role2 = new Role("Teddy");
 $role3 = new Role("Jack Dawson");
 $role4 = new Role("Padmé Amidala");
-
+$role5 = new Role("Jack Sparrow");
 
 // Création objet Jouer
 $jouer1 = new Jouer($acteur1, $film1, $role1);
-$jouer2 = new Jouer($acteur1, $film2, $role2);
+$jouer2 = new Jouer($acteur1, $film1, $role2);
 $jouer3 = new Jouer($acteur2, $film2, $role2);
-$jouer6 = new Jouer($acteur2, $film2, $role2);
 $jouer4 = new Jouer($acteur2, $film3, $role3);
 $jouer5 = new Jouer($acteur3, $film1, $role4);
+$jouer6 = new Jouer($acteur2, $film2, $role2);
+$jouer7 = new Jouer($acteur1, $film4, $role5);
 
-// Affichage de la filmographie des acteurs
-echo $acteur1->getFilmographie();
-echo $acteur2->getFilmographie();
-echo $acteur3->getFilmographie();
 
-// Affichage de la filmographie des réalisateurs
-echo $realisateur1->ajouterFilm($film1);
-echo $realisateur2->ajouterFilm($film2);
+// afficher tout la filmographie d'un acteur
+echo $acteur1->afficherFilmographie();
+echo $acteur2->afficherFilmographie();
+echo $acteur3->afficherFilmographie();
 
-//affichage des roles
-echo $jouer1->afficherRole();
-echo $jouer2->afficherRole();
-echo $jouer3->afficherRole();
-echo $jouer4->afficherRole();
-echo $jouer5->afficherRole();
-echo $jouer6->afficherRole();
+
+//afficher les rôle des acteur dans un film
+echo $film1->afficherCasting();
+echo $film2->afficherCasting();
+echo $film3->afficherCasting();
+
+
+
 
 ?>

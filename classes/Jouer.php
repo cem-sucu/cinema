@@ -10,22 +10,17 @@ class Jouer {
         $this->film = $film;
         $this->role = $role;
 
-        $acteur->ajouterFilm($film, $role);
         $acteur->ajouterCasting($this);
         $film->ajouterCasting($this);
         $role->ajouterCasting($this);
     }
 
     public function afficherRole()
-{
-    echo "Film: " . $this->film->getTitre() . "<br>";
-    echo "Rôle : " . $this->role->getNom() . "<br>";
-    echo "Acteur : " . $this->acteur->getNom() . "<br>";
-}
-
-
-   
-
+    {
+        echo "Film: " . $this->film->getTitre() . "<br>";
+        echo "Rôle : " . $this->role->getNom() . "<br>";
+        echo "Acteur : " . $this->acteur->getNom() . "<br>";
+    }
 
     public function getActeur()
     {

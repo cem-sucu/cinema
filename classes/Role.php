@@ -15,17 +15,29 @@ class Role{
         $this->castings[] = $casting;
     }
 
-        function getNom()
-        {
-                return $this->nom;
-        }
-   
-        public function setNom($nom)
-        {
-                $this->nom = $nom;
+    function getNom()
+    {
+        return $this->nom;
+    }
 
-                return $this;
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    //methode pour afficher tout les acteurs
+    public function afficherCasting()
+    {
+        $result = "<h3>Casting pour le rôle : " . $this->getNom() . "</h3>";
+        foreach ($this->castings as $casting) {
+            $acteur = $casting->getActeur();
+            $film = $casting->getFilm();
+        $result .= $acteur->getNom() . " " . $acteur->getPrenom() . " - " . $film->getTitre() . "<br>";
         }
+        return $result;
+    }
 }
 
 

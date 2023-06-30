@@ -18,10 +18,12 @@ class Genre{
         $this->genre = $genre;
     }
 
+    // methode toString
     public function __toString() {
         return "Genre : " . $this->getGenre();
     }
 
+    // methode ajouter film
     public function addFilm(Film $film) {
         $this->films[] = $film;
     }

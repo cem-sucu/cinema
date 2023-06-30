@@ -1,71 +1,48 @@
 <?php 
 
 class Acteur extends Personne {
-    private string $nom;
-    private string $prenom;
-    private string $sexe;
-    private string $dateNaissance;
+    
     private array $filmographie;
 
     public function __construct(string $nom, string $prenom, string $sexe, string $dateNaissance) {
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->sexe = $sexe;
-        $this->dateNaissance = $dateNaissance;
+        parent::__construct($nom, $prenom, $sexe, $dateNaissance);
         $this->filmographie = array();
-
     }
 
     // methode ajoute casting
     public function ajouterCasting(Jouer $casting) {
-        $this->filmographie[] = ["film" => $casting->getFilm(), "role" => $casting->getRole()];
+        $this->filmographie[] = $casting;
     }
     
-    
-
-    public function ajouterFilm(Film $film, Role $role) {
-        $this->filmographie[] = ["film" => $film, "role" => $role];
+    // méthode afficher les films
+    public function afficherFilmographie(): string {
+        $result = "<h3>Filmographie de " . $this->getPrenom() . " " . $this->getNom() . ":</h3> ";
+        foreach ($this->filmographie as $item) {
+            $film = $item->getFilm();
+            $role = $item->getRole();
+            $result .= $film->getTitre() . " (" . $role->getNom() . "), ";
+        }
+        return $result;
     }
 
+    //methode pour ajout film
+    public function ajouterFilm(Film $film) {
+        $this->filmographie[] = $film;
+    }
+
+    // meethode pour afficher filmographie
     public function getFilmographie() {
-        $filmographieStr = '';
+        $result = '';
         foreach ($this->filmographie as $item) {
             $film = $item["film"];
             $role = $item["role"];
-            $filmographieStr .= $film->getTitre() . " (" . $role->getNom() . "), ";
+            $result .= $film->getTitre() . " (" . $role->getNom() . "), ";
         }
-        return $filmographieStr;
+        return $result;
     }
 
  
-    public function getNom()
-    {
-        return $this->nom;
-    }
 
-
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
-
-
-    public function getSexe()
-    {
-        return $this->sexe;
-    }
-
-    public function getDateNaissance()
-    {
-        return $this->dateNaissance;
-    }
 
 
 }
