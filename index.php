@@ -45,7 +45,11 @@ echo $realisateur2->afficherFilms();
 // actyeur
 $acteur1 = new Acteur("Depp", "Johnny", "H", "1960-05-01");
 $acteur2 = new Acteur("Di Caprio ", " Leonardo ", " H ", "1972-05-03");
-$acteur3 = new Acteur("Portman ", " Nathalie ", " F ", "19-05-03");
+$acteur3 = new Acteur("Portman ", " Nathalie ", " F ", "1965-05-03");
+$acteur4 = new Acteur("Bale ", " Christian ", " H ", "1980-05-03");
+$acteur5 = new Acteur("Maguuire ", " Tobey ", " H ", "1990-05-03");
+
+
 
 // role 
 $role1 = new Role("Cobb");
@@ -53,15 +57,21 @@ $role2 = new Role("Teddy");
 $role3 = new Role("Jack Dawson");
 $role4 = new Role("Padmé Amidala");
 $role5 = new Role("Jack Sparrow");
+$role6 = new Role("Batman");
+$role7 = new Role("Bruce Wayne");
+$role8 = new Role("Spiderman");
+$role9 = new Role("Peter Parker");
+
 
 // Création objet Jouer
-$jouer1 = new Jouer($acteur1, $film1, $role1);
-$jouer2 = new Jouer($acteur1, $film1, $role2);
-$jouer3 = new Jouer($acteur2, $film2, $role2);
-$jouer4 = new Jouer($acteur2, $film3, $role3);
+$jouer3 = new Jouer($acteur4, $film2, $role2);
+$jouer4 = new Jouer($acteur5, $film3, $role9);
 $jouer5 = new Jouer($acteur3, $film1, $role4);
 $jouer6 = new Jouer($acteur2, $film2, $role2);
 $jouer7 = new Jouer($acteur1, $film4, $role5);
+$jouer8 = new Jouer($acteur4, $film2, $role7);
+
+
 
 
 // afficher tout la filmographie d'un acteur

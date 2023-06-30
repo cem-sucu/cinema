@@ -32,7 +32,7 @@ class Film{
 
     // la methode afficher le castinbg
     public function afficherCasting(): string {
-        $result = "<h3>Casting du film : " . $this->getTitre() . "</h3>";
+        $result = "<h3>Acteur ayant joué dans  : " . $this->getTitre() . "</h3>";
         foreach ($this->castings as $casting) {
             $acteur = $casting->getActeur();
             $role = $casting->getRole();
