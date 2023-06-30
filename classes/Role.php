@@ -1,7 +1,7 @@
 <?php 
 
 class Role{
-    private $nom;
+    private string $nom;
     private array $castings;
 
     public function __construct(string $nom)

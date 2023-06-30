@@ -28,16 +28,7 @@ class Acteur extends Personne {
         $this->filmographie[] = $film;
     }
 
-    // meethode pour afficher filmographie
-    public function getFilmographie() {
-        $result = '';
-        foreach ($this->filmographie as $item) {
-            $film = $item["film"];
-            $role = $item["role"];
-            $result .= $film->getTitre() . " (" . $role->getNom() . "), ";
-        }
-        return $result;
-    }
+    
 
  
 
