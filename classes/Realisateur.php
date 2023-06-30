@@ -53,9 +53,7 @@ class Realisateur extends Personne {
     public function setDateNaissance($dateNaissance) {
         $this->dateNaissance = $dateNaissance;
     }
-/**
-     * Get the value of filmographie
-     */ 
+ 
     public function getFilmographie()
     {
         return $this->filmographie;

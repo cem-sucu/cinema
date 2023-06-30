@@ -15,22 +15,11 @@ class Role{
         $this->castings[] = $casting;
     }
 
-   
-
-        /**
-         * Get the value of nom
-         */ 
-        public function getNom()
+        function getNom()
         {
                 return $this->nom;
         }
-        
-
-        /**
-         * Set the value of nom
-         *
-         * @return  self
-         */ 
+   
         public function setNom($nom)
         {
                 $this->nom = $nom;
