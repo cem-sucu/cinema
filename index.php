@@ -17,17 +17,17 @@ $realisateur2 = new Realisateur("J. J. ", " Abraham ", " H ", "1938-04-08");
 echo $realisateur1 ."<br>";
 echo $realisateur2 ."<br>";
 
-// genre
-$genre1 = new Genre("Action", $realisateur2);
-$genre2 = new Genre("Fantastique",$realisateur1);
-echo $genre1 ."<br>";
-echo $genre2 ."<br><br>";
+//genre 
+$genre1 = new Genre("Science-fiction");
+$genre2 = new Genre("Fantastique");
+$genre3 = new Genre("Action");
 
 // film
 $film1 = new Film("Star Wars Episode IV", 121, "La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle.", "1977-03-03", $genre1, $realisateur1);
 $film2 = new Film("Batman", 134, "Un super héros habillé en chauve-souris qui protège Gotham.", "1954-05-04", $genre2, $realisateur2);
 $film3 = new Film("Spiderman 1", 221, "Super-héros homme-araignée qui attrape les méchants.", "1974-05-04", $genre2, $realisateur2);
 $film4 = new Film("Pirate des Caraibes", 221, "Pirate qui vie des aventures", "1974-05-04", $genre2, $realisateur2);
+
 
 //affiche les films
 echo $film1."<br><br>";

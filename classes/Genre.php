@@ -1,26 +1,26 @@
 <?php
 
 class Genre{
-    private string $genre;
+    private string $nom;
     private array $films;
 
-    public function __construct(string $genre){
-        $this->genre=$genre;	
+    public function __construct(string $nom){
+        $this->nom=$nom;	
         $this->films=[];
     }
     
 
-//getter et setter de genre
-    public function getGenre():string{
-        return $this->genre;
+//getter et setter de nom
+    public function getNom():string{
+        return $this->nom;
     }
-    public function setGenre($genre){
-        $this->genre = $genre;
+    public function setNom($nom){
+        $this->nom = $nom;
     }
 
     // methode toString
     public function __toString() {
-        return "Genre : " . $this->getGenre();
+        return "nom : " . $this->getNom();
     }
 
     // methode ajouter film
@@ -31,7 +31,7 @@ class Genre{
 
     // Méthode pour afficher les films par genre
     public function afficherFilms() {
-        $result = "<h3>Films du genre " . $this->genre . "</h3>";
+        $result = "<h3>Films du nom " . $this->nom . "</h3>";
         foreach ($this->films as $film) {
              $result .= $film . "<br>";
         }
